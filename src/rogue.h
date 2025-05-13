@@ -327,7 +327,7 @@ extern struct id id_armors[];
 extern object mon_tab[];
 extern object level_monsters;
 
-extern char mesg[][80];
+extern char mesg[][320];
 
 #define MONSTERS 26
 
