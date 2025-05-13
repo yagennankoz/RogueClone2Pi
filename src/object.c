@@ -55,7 +55,7 @@ char *po_color[14] = {
     mesg[344], mesg[345], mesg[346], mesg[347]
 };
 
-char po_title[14][34], sc_title[12][34], wa_title[10][34], ri_title[11][34];
+char po_title[14][136], sc_title[12][136], wa_title[10][136], ri_title[11][136];
 
 struct id id_potions[POTIONS] = {
     {100, po_title[0], mesg[348], 0},

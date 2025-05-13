@@ -178,7 +178,7 @@ make_scroll_titles(void)
 	    s = get_rand(1, (MAXSYLLABLES - 1));
 	    //n = strlen(syllables[s]);
 	    n = utf8strlen(syllables[s]);
-	    if (len + n - 1 >= MAX_TITLE_LENGTH - 2) {
+	    if (len + n - 3 >= MAX_TITLE_LENGTH - 2) {
 		break;
 	    }
 	    (void) strcat(id_scrolls[i].title, syllables[s]);
@@ -186,8 +186,7 @@ make_scroll_titles(void)
 	}
     p = id_scrolls[i].title;
     title_len = strlen(p);
-    if (title_len >= 1 && 
-        (unsigned char)p[title_len-1] == 0x20) {
+    if ((unsigned char)p[title_len-1] == 0x20) {
         p[title_len-1] = '\0';
     }
 	(void) strcat(id_scrolls[i].title, "」");
