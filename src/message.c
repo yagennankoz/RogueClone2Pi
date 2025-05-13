@@ -44,7 +44,6 @@ message(char *msg, boolean intrpt)
 	interrupted = 1;
     }
     cant_int = 1;
-
     if (!msg_cleared) {
 	mvaddstr_rogue(MIN_ROW - 1, msg_col, mesg[11]);
 	refresh();

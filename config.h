@@ -32,7 +32,7 @@
 /* #undef HAVE_LIBKERNEL32 */
 
 /* Define to 1 if you have the `ncursesw' library (-lncursesw). */
-/* #undef HAVE_LIBNCURSESW */
+#define HAVE_LIBNCURSESW 1
 
 /* Define to 1 if you have the <locale.h> header file. */
 #define HAVE_LOCALE_H 1
@@ -94,7 +94,7 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <termio.h> header file. */
-/* #undef HAVE_TERMIO_H */
+#define HAVE_TERMIO_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
@@ -104,7 +104,7 @@
 
 /* Define to 1 if `lstat' dereferences a symlink specified with a trailing
    slash. */
-/* #undef LSTAT_FOLLOWS_SLASHED_SYMLINK */
+#define LSTAT_FOLLOWS_SLASHED_SYMLINK 1
 
 /* Define to 1 if your C compiler doesn't accept -c and -o together. */
 /* #undef NO_MINUS_C_MINUS_O */

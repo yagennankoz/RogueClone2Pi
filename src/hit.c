@@ -68,8 +68,8 @@ mon_hit(object *monster, char *other, boolean flame)
 
     if (!rand_percent(hit_chance)) {
 	if (!fight_monster) {
-	    //sprintf(hit_message + strlen(hit_message),
-	    sprintf(hit_message + utf8strlen(hit_message),
+	    sprintf(hit_message + strlen(hit_message),
+	    //sprintf(hit_message + utf8strlen(hit_message),
 		    mesg[18], (other ? other : mn));
 	    message(hit_message, 1);
 	    hit_message[0] = 0;
@@ -77,8 +77,8 @@ mon_hit(object *monster, char *other, boolean flame)
 	return;
     }
     if (!fight_monster) {
-	//sprintf(hit_message + strlen(hit_message),
-	sprintf(hit_message + utf8strlen(hit_message),
+	sprintf(hit_message + strlen(hit_message),
+	//sprintf(hit_message + utf8strlen(hit_message),
 		mesg[19], (other ? other : mn), (other ? mesg[20] : mesg[21]));
 	message(hit_message, 1);
 	hit_message[0] = 0;
@@ -277,8 +277,8 @@ mon_damage(object *monster, int damage)
 	fight_monster = 0;
 	cough_up(monster);
 	mn = mon_name(monster);
-	//sprintf(hit_message + strlen(hit_message), mesg[24], mn);
-	sprintf(hit_message + utf8strlen(hit_message), mesg[24], mn);
+	sprintf(hit_message + strlen(hit_message), mesg[24], mn);
+	// sprintf(hit_message + utf8strlen(hit_message), mesg[24], mn);
 	message(hit_message, 1);
 	hit_message[0] = 0;
 	add_exp(monster->kill_exp, 1);

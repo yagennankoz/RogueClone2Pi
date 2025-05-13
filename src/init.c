@@ -77,12 +77,18 @@ static const char utf8len_codepage[256] =
 */
 int utf8len(const char* p)
 {
-  int len;
-  if(*p==0) return 1;
-  len=utf8len_codepage[(const unsigned char)*p];
-  for(int i=1;i<len;++i) {
-    if(utf8_islead(p[i])) return 1;
-  }
+    int len;
+    if ((*p & 0x80) == 0) {
+        len = 1;
+    } else if ((*p & 0xE0) == 0xC0) {
+        len = 2;
+    } else if ((*p & 0xF0) == 0xE0) {
+        len = 2;
+    } else if ((*p & 0xF8) == 0xF0) {
+        len = 2;
+    } else {
+        len = 1;
+    }
   return len;
 }
 //u8mb関数：UTF-8文字の1バイト目を判定して文字のバイト数を返す関数

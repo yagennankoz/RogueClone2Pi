@@ -751,8 +751,8 @@ insert_score(char scores[][82], char n_names[][30], char *n_name, short rank,
 	(void) strcat(buf, mesg[197]);
     }
     strcat(buf, "。");
-    //for (i = strlen(buf); i < 79; i++) {
-    for (i = utf8strlen(buf); i < 79; i++) {
+    for (i = strlen(buf); i < 79; i++) {
+    //for (i = utf8strlen(buf); i < 79; i++) {
 	buf[i] = ' ';
     }
     buf[79] = 0;

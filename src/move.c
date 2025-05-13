@@ -162,8 +162,7 @@ one_move_rogue(short dirch, short pickup)
 #if defined( JAPAN )
 	strcat(desc, mesg[69]);
 #endif /* JAPAN */
-	//p = desc + strlen(desc);
-	p = desc + utf8strlen(desc);
+	p = desc + strlen(desc);
 	*p++ = '(';
 	*p++ = obj->ichar;
 	*p++ = ')';

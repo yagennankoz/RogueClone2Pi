@@ -64,7 +64,7 @@ inventory(object *pack, unsigned short mask)
     char *p;
 #if defined( JAPAN )
     char *msg = "  ＝スペースを押してください＝";
-    short len = 30;
+    short len = 46;
 #else /* not JAPAN */
     char *msg = " --Press space to continue--";
     short len = 28;
@@ -165,8 +165,9 @@ mix_colors(void)
 void
 make_scroll_titles(void)
 {
-    short i, j, n, len;
+    short i, j, n, len, title_len;
     short sylls, s;
+	char *p;
 
     for (i = 0; i < SCROLS; i++) {
 	sylls = get_rand(2, 5);
@@ -183,7 +184,13 @@ make_scroll_titles(void)
 	    (void) strcat(id_scrolls[i].title, syllables[s]);
 	    len += n;
 	}
-	(void) strcpy(id_scrolls[i].title + (len - 1), "」");
+    p = id_scrolls[i].title;
+    title_len = strlen(p);
+    if (title_len >= 1 && 
+        (unsigned char)p[title_len-1] == 0x20) {
+        p[title_len-1] = '\0';
+    }
+	(void) strcat(id_scrolls[i].title, "」");
 #else /* not JAPAN */
 	(void) strcpy(id_scrolls[i].title, "'");
 	for (j = 0; j < sylls; j++) {
@@ -845,12 +852,12 @@ znum(char *buf, int n, int plus)
     }
     if (plus && n >= 0) {
 	strcpy(buf, "＋");
-	buf += 2;
+	buf += 3;
     }
     sprintf(s, "%d", n);
     for (p = s; *p; p++) {
 	strcpy(buf, (*p == '-') ? "−" : _num[*p - '0']);
-	buf += 2;
+	buf += 3;
     }
 }
 
@@ -864,12 +871,12 @@ lznum(char *buf, long n, int plus)
     }
     if (plus && n >= 0L) {
 	strcpy(buf, "＋");
-	buf += 2;
+	buf += 3;
     }
     sprintf(s, "%ld", n);
     for (p = s; *p; p++) {
 	strcpy(buf, (*p == '-') ? "−" : _num[*p - '0']);
-	buf += 2;
+	buf += 3;
     }
 }
 #endif /* JAPAN */
