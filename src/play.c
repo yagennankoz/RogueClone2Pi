@@ -385,7 +385,7 @@ void
 identify(void)
 {
     short ch, n;
-    char *p, buf[80];
+    char *p, buf[80*4];
 
     message(mesg[155], 0);
 

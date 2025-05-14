@@ -148,7 +148,7 @@ steal_item(object *monster)
 {
     object *obj;
     short i, n, t = 0;		/* 未初期化変数の使用の警告のための初期化。 0 を代入 */
-    char desc[80];
+    char desc[80*4];
     boolean has_something = 0;
 
     if (rand_percent(15)) {

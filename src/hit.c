@@ -31,7 +31,7 @@
 
 extern char *nick_name;
 object *fight_monster = 0;
-char hit_message[80] = "";
+char hit_message[80*4] = "";
 
 extern short halluc, blind, cur_level;
 extern short add_strength, ring_exp, r_rings;

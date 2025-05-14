@@ -43,7 +43,7 @@ killed_by(object *monster, short other)
 {
     int i;
     char *p, *q;
-    char buf[80];
+    char buf[80*4];
     char buf2[20];
     struct rogue_time rt;
     static char xpos[] = {
@@ -222,7 +222,7 @@ object *monster;
 short other;
 {
     char *p;
-    char buf[80];
+    char buf[80*4];
 
     md_ignore_signals();
 
@@ -842,7 +842,7 @@ sell_pack(void)
 {
     object *obj;
     short row = 2, val;
-    char buf[80];
+    char buf[80*4];
 
     obj = rogue.pack.next_object;
 

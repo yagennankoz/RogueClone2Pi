@@ -676,7 +676,7 @@ new_object_for_wizard(void)
     short wk;
 #endif /* ORIGINAL */
     object *obj;
-    char buf[80];
+    char buf[80*4];
 
     if (pack_count((object *) 0) >= MAX_PACK_COUNT) {
 	message(mesg[81], 0);

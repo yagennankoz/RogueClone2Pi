@@ -29,7 +29,7 @@ extern short party_room;
 #if !defined( ORIGINAL )
 extern char *nick_name;
 static char *progname;
-char mesg[507][320];		/* for separation */
+char mesg[507][80*4];		/* for separation */
 #endif /* not ORIGINAL */
 
 
@@ -38,7 +38,7 @@ main(int argc, char *argv[])
 {
 #if !defined( ORIGINAL )
     int first = 1;
-    char buf[80*3];
+    char buf[80*4];
 #endif /* ORIGINAL */
 
     setlocale(LC_ALL,"");
@@ -105,7 +105,7 @@ read_mesg(char *argv_msgfile)
 		goto FMTERR;
 	    }
 
-	    for (i = 0; i < e - s + 1 && i < 319; ++i) {
+	    for (i = 0; i < e - s + 1 && i < (80*4-1); ++i) {
 		mesg[n][i] = buf[s + i];
 	    }
 	    mesg[n][i] = '\0';
