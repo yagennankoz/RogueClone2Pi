@@ -315,7 +315,7 @@ extern room rooms[];
 extern trap traps[];
 extern unsigned short dungeon[ROGUE_LINES][ROGUE_COLUMNS];
 extern object level_objects;
-extern char descs[ROGUE_LINES][ROGUE_COLUMNS];
+extern char descs[ROGUE_LINES][ROGUE_COLUMNS*4];
 
 extern struct id id_scrolls[];
 extern struct id id_potions[];

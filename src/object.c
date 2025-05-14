@@ -793,7 +793,7 @@ void
 list_object(object *obj, short max)
 {
     short i, j, maxlen, n;
-    char descs[ROGUE_LINES][ROGUE_COLUMNS];
+    char descs[ROGUE_LINES][ROGUE_COLUMNS*4];
     short row, col;
     struct id *id;
     int weapon_or_armor;	/* by Yasha */

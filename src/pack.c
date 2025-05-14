@@ -582,8 +582,8 @@ kick_into_pack(void)
 		message(desc, 0);
 		free_object(obj);
 	    } else {
-		//p = desc + strlen(desc);
-		p = desc + utf8strlen(desc);
+		p = desc + strlen(desc);
+		//p = desc + utf8strlen(desc);
 		*p++ = '(';
 		*p++ = obj->ichar;
 		*p++ = ')';
