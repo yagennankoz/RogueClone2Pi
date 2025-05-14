@@ -339,7 +339,7 @@ help(void)
     char disp_message[ROGUE_COLUMNS+1];
 
     /* 現在の画面を保存する */
-    for (lines = 0; lines < ROGUE_LINES; lines++) {
+    for (lines = 0; lines < ROGUE_LINES - 1; lines++) {
 	for (columns = 0; columns < ROGUE_COLUMNS; columns++) {
 	    descs[lines][columns] = mvinch_rogue(lines, columns);
 	}
@@ -355,7 +355,8 @@ help(void)
     wait_for_ack();
 
     /* 保持した画面を復帰させる */
-    for (lines = 0; lines < ROGUE_LINES; lines++) {
+	clear();
+    for (lines = 0; lines < ROGUE_LINES - 1; lines++) {
 	move(lines, 0);
 	if (lines > 0 && lines < ROGUE_LINES - 1) {
 	    for (columns = 0; columns < ROGUE_COLUMNS; columns++) {
@@ -368,6 +369,7 @@ help(void)
 
 	    addstr_rogue(disp_message);
 	}
+	print_stats(STAT_ALL);
     }
     refresh();
 }
