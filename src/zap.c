@@ -285,7 +285,7 @@ void
 wizardize(void)
 {
 #if defined( WIZARD )
-    char buf[100];
+    char buf[100*4];
 
     if (wizard) {
 	wizard = 0;

@@ -55,7 +55,7 @@ one_move_rogue(short dirch, short pickup)
     short r, c;
     char *p;
     object *obj;
-    char desc[ROGUE_COLUMNS];
+    char desc[ROGUE_COLUMNS*4];
     short status;
 
     r = rogue.row;

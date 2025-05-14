@@ -210,7 +210,7 @@ get_desc(object *obj, char *desc, boolean capitalized)
 #if defined( JAPAN )			/* for whole function */
     char *item_name, *p;
     struct id *id_table;
-    char more_info[32];
+    char more_info[32*4];
     short i;
 
     *desc = 0;

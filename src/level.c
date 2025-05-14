@@ -731,11 +731,11 @@ check_up(void)
 void
 add_exp(int e, boolean promotion)
 {
-    char mbuf[40];
+    char mbuf[40*4];
     short new_exp;
     short i, hp;
 #if defined( JAPAN )
-    char bf[8];
+    char bf[8*2];
 #endif /* JAPAN */
 
     rogue.exp_points += e;
@@ -792,7 +792,7 @@ hp_raise(void)
 void
 show_average_hp(void)
 {
-    char mbuf[80];
+    char mbuf[80*4];
     long real_average;
     long effective_average;
 

@@ -53,7 +53,7 @@ void
 quaff(void)
 {
     short ch;
-    char buf[80];
+    char buf[80*4];
     object *obj;
 
     ch = pack_letter(mesg[231], POTION);
@@ -289,7 +289,7 @@ read_scroll(void)
 {
     short ch;
     object *obj;
-    char msg[ROGUE_COLUMNS];
+    char msg[ROGUE_COLUMNS*4];
 
     ch = pack_letter(mesg[245], SCROL);
 
@@ -391,7 +391,7 @@ read_scroll()
 {
     short ch;
     object *obj;
-    char msg[ROGUE_COLUMNS];
+    char msg[ROGUE_COLUMNS*4];
 
     ch = pack_letter(mesg[245], SCROL);
 
@@ -566,7 +566,7 @@ idntfy(void)
     short ch;
     object *obj;
     struct id *id_table;
-    char desc[ROGUE_COLUMNS];
+    char desc[ROGUE_COLUMNS*4];
 AGAIN:
     ch = pack_letter(mesg[260], ALL_OBJECTS);
     if (ch == CANCEL) {
@@ -593,7 +593,7 @@ eat(void)
     short ch;
     short moves;
     object *obj;
-    char buf[70];
+    char buf[70*4];
 
     ch = pack_letter(mesg[262], FOOD);
     if (ch == CANCEL) {
@@ -810,7 +810,7 @@ confuse(void)
 void
 unconfuse(void)
 {
-    char msg[80];
+    char msg[80*4];
 
     confused = 0;
     if (halluc) {

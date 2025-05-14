@@ -44,7 +44,7 @@ killed_by(object *monster, short other)
     int i;
     char *p, *q;
     char buf[80*4];
-    char buf2[20];
+    char buf2[20*4];
     struct rogue_time rt;
     static char xpos[] = {
 	ROGUE_COLUMNS / 2 - 5, ROGUE_COLUMNS / 2 - 6, ROGUE_COLUMNS / 2 - 7, ROGUE_COLUMNS / 2 - 8,

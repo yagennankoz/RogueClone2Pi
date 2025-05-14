@@ -354,7 +354,7 @@ check_gold_seeker(object *monster)
 int
 check_imitator(object *monster)
 {
-    char msg[80];
+    char msg[80*4];
 
     if (monster->m_flags & IMITATES) {
 	wake_up(monster);
@@ -389,7 +389,7 @@ void
 sting(object *monster)
 {
     short sting_chance = 35;
-    char msg[80];
+    char msg[80*4];
 
     if ((rogue.str_current <= 3) || sustain_strength) {
 	return;
@@ -459,7 +459,7 @@ drain_life(void)
 int
 m_confuse(object *monster)
 {
-    char msg[80];
+    char msg[80*4];
 
     if (!rogue_can_see(monster->row, monster->col)) {
 	return 0;

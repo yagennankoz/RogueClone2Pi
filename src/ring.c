@@ -35,7 +35,7 @@ void
 put_on_ring(void)
 {
     short ch;
-    char desc[ROGUE_COLUMNS];
+    char desc[ROGUE_COLUMNS*4];
     object *ring;
 
     if (r_rings == 2) {
@@ -111,7 +111,7 @@ remove_ring(void)
 {
     boolean left = 0, right = 0;
     short ch;
-    char buf[ROGUE_COLUMNS];
+    char buf[ROGUE_COLUMNS*4];
     object *ring;
 
     if (r_rings == 0) {
@@ -223,7 +223,7 @@ gr_ring(object *ring, boolean assign_wk)
 void
 inv_rings(void)
 {
-    char buf[ROGUE_COLUMNS];
+    char buf[ROGUE_COLUMNS*4];
 
     if (r_rings == 0) {
 	message(mesg[167], 0);

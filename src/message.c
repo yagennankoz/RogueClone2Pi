@@ -28,7 +28,7 @@
 char msg_line[ROGUE_COLUMNS] = "";
 short msg_col = 0;
 boolean msg_cleared = 1;
-char hunger_str[8] = "";
+char hunger_str[17] = "";
 
 extern boolean cant_int, did_int, interrupted, save_is_interactive;
 extern short add_strength;
@@ -124,7 +124,7 @@ do_input_line(boolean is_msg, int row, int col, char *prompt, char *insert,
     short i = 0, n = 0;
 #if defined( JAPAN )
     short k;
-    char kanji[MAX_TITLE_LENGTH];
+    char kanji[MAX_TITLE_LENGTH*4];
 #endif /* JAPAN */
 
     if (is_msg) {
