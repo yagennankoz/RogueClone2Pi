@@ -438,21 +438,32 @@ void
 save_screen(void)
 {
     FILE *fp;
-    short i, j;
-    char buf[ROGUE_COLUMNS + 2];
-    boolean found_non_blank;
+    short i, j, k, buf_pos;
+    char buf[ROGUE_COLUMNS *4 + 2], mb_buf[6];
+	cchar_t ch;
+	int char_size, width;
 
     if ((fp = fopen("rogue.screen", "w")) != NULL) {
 	for (i = 0; i < ROGUE_LINES; i++) {
-	    found_non_blank = 0;
-	    for (j = (ROGUE_COLUMNS - 1); j >= 0; j--) {
-		buf[j] = mvinch_rogue(i, j);  // UTF-8が正しく取得できないため文字化けする
-		if (!found_non_blank) {
-		    if ((buf[j] != ' ') || (j == 0)) {
-			buf[j + ((j == 0) ? 0 : 1)] = 0;
-			found_non_blank = 1;
-		    }
-		}
+		buf_pos = 0;
+	    for (j = 0; j < ROGUE_COLUMNS && buf_pos < sizeof(buf) - 5;) {
+			mvin_wch(i, j, &ch);
+			char_size = wcrtomb(mb_buf, ch.chars[0], NULL);
+			width = wcwidth(ch.chars[0]);
+			if (width < 1) {
+				width = 1;
+			}
+			for (k = 0; k < char_size && buf_pos < sizeof(buf) - 1; k++) {
+				buf[buf_pos++] = mb_buf[k];
+			}
+			j += width;
+	    }
+		buf[buf_pos] = '\0';
+		for (j = buf_pos - 1; j >= 0; j--) {
+			if (buf[j] != ' ' || j == 0) {
+				buf[j + 1] = '\0';
+				break;
+			}
 	    }
 	    fputs(buf, fp);
 	    putc('\n', fp);

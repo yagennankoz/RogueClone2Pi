@@ -19,11 +19,11 @@ rogue-pack.o: pack.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
  /usr/include/aarch64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
  /usr/include/aarch64-linux-gnu/bits/stdio.h /usr/include/string.h \
- /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h rogue.h ../config.h pack.h invent.h message.h \
- monster.h move.h object.h ring.h use.h
+ rogue.h ../config.h pack.h invent.h message.h monster.h move.h object.h \
+ ring.h use.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
@@ -47,11 +47,10 @@ rogue-pack.o: pack.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
 /usr/include/aarch64-linux-gnu/bits/sys_errlist.h:
+/usr/include/aarch64-linux-gnu/bits/getopt_posix.h:
+/usr/include/aarch64-linux-gnu/bits/getopt_core.h:
 /usr/include/aarch64-linux-gnu/bits/stdio.h:
 /usr/include/string.h:
-/usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
-/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
-/usr/include/strings.h:
 rogue.h:
 ../config.h:
 pack.h:

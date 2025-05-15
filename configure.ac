@@ -50,4 +50,7 @@ if test "$enable_color" != "no"; then
 AC_DEFINE([COLOR], , [Define if you have the 'COLOR'])
 fi
 
+CPPFLAGS="$CPPFLAGS -D_XOPEN_SOURCE=500"
+AC_SUBST(CPPFLAGS)
+
 AC_OUTPUT

@@ -20,18 +20,24 @@ rogue-spechit.o: spechit.c /usr/include/stdc-predef.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
  /usr/include/aarch64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
  /usr/include/aarch64-linux-gnu/bits/stdio.h /usr/include/string.h \
- /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/curses.h /usr/include/ncurses_dll.h \
+ /usr/include/curses.h /usr/include/ncurses_dll.h \
  /usr/lib/gcc/aarch64-linux-gnu/10/include/stdint.h /usr/include/stdint.h \
  /usr/include/aarch64-linux-gnu/bits/wchar.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
- /usr/lib/gcc/aarch64-linux-gnu/10/include/stdbool.h \
- /usr/include/unctrl.h rogue.h ../config.h spechit.h display.h hit.h \
- invent.h level.h message.h monster.h object.h pack.h random.h ring.h \
- room.h score.h use.h
+ /usr/lib/gcc/aarch64-linux-gnu/10/include/stdbool.h /usr/include/wchar.h \
+ /usr/include/aarch64-linux-gnu/bits/floatn.h \
+ /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+ /usr/include/aarch64-linux-gnu/bits/types/wint_t.h \
+ /usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h \
+ /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/aarch64-linux-gnu/bits/endian.h \
+ /usr/include/aarch64-linux-gnu/bits/endianness.h /usr/include/unctrl.h \
+ rogue.h ../config.h spechit.h display.h hit.h invent.h level.h message.h \
+ monster.h object.h pack.h random.h ring.h room.h score.h use.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
@@ -55,11 +61,10 @@ rogue-spechit.o: spechit.c /usr/include/stdc-predef.h \
 /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
 /usr/include/aarch64-linux-gnu/bits/sys_errlist.h:
+/usr/include/aarch64-linux-gnu/bits/getopt_posix.h:
+/usr/include/aarch64-linux-gnu/bits/getopt_core.h:
 /usr/include/aarch64-linux-gnu/bits/stdio.h:
 /usr/include/string.h:
-/usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
-/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
-/usr/include/strings.h:
 /usr/include/curses.h:
 /usr/include/ncurses_dll.h:
 /usr/lib/gcc/aarch64-linux-gnu/10/include/stdint.h:
@@ -68,6 +73,14 @@ rogue-spechit.o: spechit.c /usr/include/stdc-predef.h \
 /usr/include/aarch64-linux-gnu/bits/stdint-intn.h:
 /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
 /usr/lib/gcc/aarch64-linux-gnu/10/include/stdbool.h:
+/usr/include/wchar.h:
+/usr/include/aarch64-linux-gnu/bits/floatn.h:
+/usr/include/aarch64-linux-gnu/bits/floatn-common.h:
+/usr/include/aarch64-linux-gnu/bits/types/wint_t.h:
+/usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h:
+/usr/include/aarch64-linux-gnu/bits/wctype-wchar.h:
+/usr/include/aarch64-linux-gnu/bits/endian.h:
+/usr/include/aarch64-linux-gnu/bits/endianness.h:
 /usr/include/unctrl.h:
 rogue.h:
 ../config.h:

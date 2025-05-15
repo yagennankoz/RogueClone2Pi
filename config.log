@@ -38,6 +38,7 @@ PATH: /sbin
 PATH: /bin
 PATH: /usr/local/games
 PATH: /usr/games
+PATH: /snap/bin
 PATH: /home/pi/arm-gnu-toolchain-13.2.Rel1-aarch64-aarch64-none-elf/bin
 PATH: /home/pi/gcc-arm-none-eabi-10.3-2021.07/bin
 
@@ -46,30 +47,33 @@ PATH: /home/pi/gcc-arm-none-eabi-10.3-2021.07/bin
 ## Core tests. ##
 ## ----------- ##
 
-configure:2234: checking for a BSD-compatible install
-configure:2302: result: /usr/bin/install -c
-configure:2313: checking whether build environment is sane
-configure:2363: result: yes
-configure:2504: checking for a thread-safe mkdir -p
-configure:2543: result: /usr/bin/mkdir -p
-configure:2556: checking for gawk
-configure:2586: result: no
-configure:2556: checking for mawk
-configure:2572: found /usr/bin/mawk
-configure:2583: result: mawk
-configure:2594: checking whether make sets $(MAKE)
-configure:2616: result: yes
-configure:2749: checking for gcc
-configure:2776: result: /usr/bin/gcc
-configure:3005: checking for C compiler version
-configure:3014: /usr/bin/gcc --version >&5
+configure:2256: checking for a BSD-compatible install
+configure:2324: result: /usr/bin/install -c
+configure:2335: checking whether build environment is sane
+configure:2390: result: yes
+configure:2423: WARNING: 'missing' script is too old or missing
+configure:2536: checking for a thread-safe mkdir -p
+configure:2575: result: /usr/bin/mkdir -p
+configure:2582: checking for gawk
+configure:2612: result: no
+configure:2582: checking for mawk
+configure:2598: found /usr/bin/mawk
+configure:2609: result: mawk
+configure:2620: checking whether make sets $(MAKE)
+configure:2642: result: yes
+configure:2671: checking whether make supports nested variables
+configure:2688: result: yes
+configure:2867: checking for gcc
+configure:2894: result: /usr/bin/gcc
+configure:3123: checking for C compiler version
+configure:3132: /usr/bin/gcc --version >&5
 gcc (Debian 10.2.1-6) 10.2.1 20210110
 Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:3025: $? = 0
-configure:3014: /usr/bin/gcc -v >&5
+configure:3143: $? = 0
+configure:3132: /usr/bin/gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/10/lto-wrapper
@@ -78,74 +82,71 @@ Configured with: ../src/configure -v --with-pkgversion='Debian 10.2.1-6' --with-
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 10.2.1 20210110 (Debian 10.2.1-6) 
-configure:3025: $? = 0
-configure:3014: /usr/bin/gcc -V >&5
+configure:3143: $? = 0
+configure:3132: /usr/bin/gcc -V >&5
 gcc: error: unrecognized command-line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:3025: $? = 1
-configure:3014: /usr/bin/gcc -qversion >&5
+configure:3143: $? = 1
+configure:3132: /usr/bin/gcc -qversion >&5
 gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:3025: $? = 1
-configure:3045: checking whether the C compiler works
-configure:3067: /usr/bin/gcc    conftest.c  >&5
-configure:3071: $? = 0
-configure:3119: result: yes
-configure:3122: checking for C compiler default output file name
-configure:3124: result: a.out
-configure:3130: checking for suffix of executables
-configure:3137: /usr/bin/gcc -o conftest    conftest.c  >&5
-configure:3141: $? = 0
-configure:3163: result: 
-configure:3185: checking whether we are cross compiling
-configure:3193: /usr/bin/gcc -o conftest    conftest.c  >&5
-configure:3197: $? = 0
-configure:3204: ./conftest
-configure:3208: $? = 0
-configure:3223: result: no
-configure:3228: checking for suffix of object files
-configure:3250: /usr/bin/gcc -c   conftest.c >&5
-configure:3254: $? = 0
-configure:3275: result: o
-configure:3279: checking whether we are using the GNU C compiler
-configure:3298: /usr/bin/gcc -c   conftest.c >&5
-configure:3298: $? = 0
-configure:3307: result: yes
-configure:3316: checking whether /usr/bin/gcc accepts -g
-configure:3336: /usr/bin/gcc -c -g  conftest.c >&5
-configure:3336: $? = 0
-configure:3377: result: yes
-configure:3394: checking for /usr/bin/gcc option to accept ISO C89
-configure:3457: /usr/bin/gcc  -c -g -O2  conftest.c >&5
-configure:3457: $? = 0
-configure:3470: result: none needed
-configure:3501: checking for style of include used by make
-configure:3529: result: GNU
-configure:3554: checking dependency style of /usr/bin/gcc
-configure:3664: result: gcc3
-configure:3680: checking whether /usr/bin/gcc and cc understand -c and -o together
-configure:3711: /usr/bin/gcc -c conftest.c -o conftest2.o >&5
-configure:3715: $? = 0
-configure:3721: /usr/bin/gcc -c conftest.c -o conftest2.o >&5
-configure:3725: $? = 0
-configure:3736: cc -c conftest.c >&5
-configure:3740: $? = 0
-configure:3748: cc -c conftest.c -o conftest2.o >&5
-configure:3752: $? = 0
-configure:3758: cc -c conftest.c -o conftest2.o >&5
-configure:3762: $? = 0
-configure:3780: result: yes
-configure:3815: checking how to run the C preprocessor
-configure:3846: /usr/bin/gcc -E  conftest.c
-configure:3846: $? = 0
-configure:3860: /usr/bin/gcc -E  conftest.c
+configure:3143: $? = 1
+configure:3163: checking whether the C compiler works
+configure:3185: /usr/bin/gcc    conftest.c  >&5
+configure:3189: $? = 0
+configure:3237: result: yes
+configure:3240: checking for C compiler default output file name
+configure:3242: result: a.out
+configure:3248: checking for suffix of executables
+configure:3255: /usr/bin/gcc -o conftest    conftest.c  >&5
+configure:3259: $? = 0
+configure:3281: result: 
+configure:3303: checking whether we are cross compiling
+configure:3311: /usr/bin/gcc -o conftest    conftest.c  >&5
+configure:3315: $? = 0
+configure:3322: ./conftest
+configure:3326: $? = 0
+configure:3341: result: no
+configure:3346: checking for suffix of object files
+configure:3368: /usr/bin/gcc -c   conftest.c >&5
+configure:3372: $? = 0
+configure:3393: result: o
+configure:3397: checking whether we are using the GNU C compiler
+configure:3416: /usr/bin/gcc -c   conftest.c >&5
+configure:3416: $? = 0
+configure:3425: result: yes
+configure:3434: checking whether /usr/bin/gcc accepts -g
+configure:3454: /usr/bin/gcc -c -g  conftest.c >&5
+configure:3454: $? = 0
+configure:3495: result: yes
+configure:3512: checking for /usr/bin/gcc option to accept ISO C89
+configure:3575: /usr/bin/gcc  -c -g -O2  conftest.c >&5
+configure:3575: $? = 0
+configure:3588: result: none needed
+configure:3613: checking whether /usr/bin/gcc understands -c and -o together
+configure:3635: /usr/bin/gcc -c conftest.c -o conftest2.o
+configure:3638: $? = 0
+configure:3635: /usr/bin/gcc -c conftest.c -o conftest2.o
+configure:3638: $? = 0
+configure:3650: result: yes
+configure:3670: checking whether make supports the include directive
+configure:3685: make -f confmf.GNU && cat confinc.out
+this is the am__doit target
+configure:3688: $? = 0
+configure:3707: result: yes (GNU style)
+configure:3732: checking dependency style of /usr/bin/gcc
+configure:3843: result: gcc3
+configure:3869: checking how to run the C preprocessor
+configure:3900: /usr/bin/gcc -E  conftest.c
+configure:3900: $? = 0
+configure:3914: /usr/bin/gcc -E  conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:3860: $? = 1
+configure:3914: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -158,15 +159,15 @@ configure: failed program was:
 | #define VERSION "6.0"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:3885: result: /usr/bin/gcc -E
-configure:3905: /usr/bin/gcc -E  conftest.c
-configure:3905: $? = 0
-configure:3919: /usr/bin/gcc -E  conftest.c
+configure:3939: result: /usr/bin/gcc -E
+configure:3959: /usr/bin/gcc -E  conftest.c
+configure:3959: $? = 0
+configure:3973: /usr/bin/gcc -E  conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:3919: $? = 1
+configure:3973: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -179,125 +180,125 @@ configure: failed program was:
 | #define VERSION "6.0"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:3948: checking for grep that handles long lines and -e
-configure:4006: result: /usr/bin/grep
-configure:4011: checking for egrep
-configure:4073: result: /usr/bin/grep -E
-configure:4078: checking for ANSI C header files
-configure:4098: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4098: $? = 0
-configure:4171: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
-configure:4171: $? = 0
-configure:4171: ./conftest
-configure:4171: $? = 0
-configure:4182: result: yes
-configure:4195: checking for sys/types.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for sys/stat.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for stdlib.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for string.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for memory.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for strings.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for inttypes.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for stdint.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4195: checking for unistd.h
-configure:4195: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4195: $? = 0
-configure:4195: result: yes
-configure:4210: checking fcntl.h usability
-configure:4210: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking fcntl.h presence
-configure:4210: /usr/bin/gcc -E  conftest.c
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking for fcntl.h
-configure:4210: result: yes
-configure:4210: checking sgtty.h usability
-configure:4210: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking sgtty.h presence
-configure:4210: /usr/bin/gcc -E  conftest.c
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking for sgtty.h
-configure:4210: result: yes
-configure:4210: checking for stdlib.h
-configure:4210: result: yes
-configure:4210: checking for string.h
-configure:4210: result: yes
-configure:4210: checking for strings.h
-configure:4210: result: yes
-configure:4210: checking sys/file.h usability
-configure:4210: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking sys/file.h presence
-configure:4210: /usr/bin/gcc -E  conftest.c
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking for sys/file.h
-configure:4210: result: yes
-configure:4210: checking sys/time.h usability
-configure:4210: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking sys/time.h presence
-configure:4210: /usr/bin/gcc -E  conftest.c
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking for sys/time.h
-configure:4210: result: yes
-configure:4210: checking termio.h usability
-configure:4210: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking termio.h presence
-configure:4210: /usr/bin/gcc -E  conftest.c
-configure:4210: $? = 0
-configure:4210: result: yes
-configure:4210: checking for termio.h
-configure:4210: result: yes
-configure:4210: checking for unistd.h
-configure:4210: result: yes
-configure:4222: checking for an ANSI C-conforming const
-configure:4288: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4288: $? = 0
-configure:4295: result: yes
-configure:4303: checking for size_t
-configure:4303: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4303: $? = 0
-configure:4303: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4002: checking for grep that handles long lines and -e
+configure:4060: result: /usr/bin/grep
+configure:4065: checking for egrep
+configure:4127: result: /usr/bin/grep -E
+configure:4132: checking for ANSI C header files
+configure:4152: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4152: $? = 0
+configure:4225: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
+configure:4225: $? = 0
+configure:4225: ./conftest
+configure:4225: $? = 0
+configure:4236: result: yes
+configure:4249: checking for sys/types.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for sys/stat.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for stdlib.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for string.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for memory.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for strings.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for inttypes.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for stdint.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4249: checking for unistd.h
+configure:4249: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4249: $? = 0
+configure:4249: result: yes
+configure:4264: checking fcntl.h usability
+configure:4264: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking fcntl.h presence
+configure:4264: /usr/bin/gcc -E  conftest.c
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking for fcntl.h
+configure:4264: result: yes
+configure:4264: checking sgtty.h usability
+configure:4264: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking sgtty.h presence
+configure:4264: /usr/bin/gcc -E  conftest.c
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking for sgtty.h
+configure:4264: result: yes
+configure:4264: checking for stdlib.h
+configure:4264: result: yes
+configure:4264: checking for string.h
+configure:4264: result: yes
+configure:4264: checking for strings.h
+configure:4264: result: yes
+configure:4264: checking sys/file.h usability
+configure:4264: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking sys/file.h presence
+configure:4264: /usr/bin/gcc -E  conftest.c
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking for sys/file.h
+configure:4264: result: yes
+configure:4264: checking sys/time.h usability
+configure:4264: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking sys/time.h presence
+configure:4264: /usr/bin/gcc -E  conftest.c
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking for sys/time.h
+configure:4264: result: yes
+configure:4264: checking termio.h usability
+configure:4264: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking termio.h presence
+configure:4264: /usr/bin/gcc -E  conftest.c
+configure:4264: $? = 0
+configure:4264: result: yes
+configure:4264: checking for termio.h
+configure:4264: result: yes
+configure:4264: checking for unistd.h
+configure:4264: result: yes
+configure:4276: checking for an ANSI C-conforming const
+configure:4342: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4342: $? = 0
+configure:4349: result: yes
+configure:4357: checking for size_t
+configure:4357: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4357: $? = 0
+configure:4357: /usr/bin/gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:66:21: error: expected expression before ')' token
    66 | if (sizeof ((size_t)))
       |                     ^
-configure:4303: $? = 1
+configure:4357: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -369,26 +370,26 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:4303: result: yes
-configure:4314: checking whether struct tm is in sys/time.h or time.h
-configure:4334: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4334: $? = 0
-configure:4341: result: time.h
-configure:4352: checking whether /usr/bin/gcc needs -traditional
-configure:4386: result: no
-configure:4393: checking for working memcmp
-configure:4436: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
-configure:4436: $? = 0
-configure:4436: ./conftest
-configure:4436: $? = 0
-configure:4446: result: yes
-configure:4455: checking return type of signal handlers
-configure:4473: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4357: result: yes
+configure:4368: checking whether struct tm is in sys/time.h or time.h
+configure:4388: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4388: $? = 0
+configure:4395: result: time.h
+configure:4406: checking whether /usr/bin/gcc needs -traditional
+configure:4440: result: no
+configure:4447: checking for working memcmp
+configure:4490: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
+configure:4490: $? = 0
+configure:4490: ./conftest
+configure:4490: $? = 0
+configure:4500: result: yes
+configure:4509: checking return type of signal handlers
+configure:4527: /usr/bin/gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:36:10: error: void value not ignored as it ought to be
    36 | return *(signal (0, 0)) (0) == 1;
       |         ~^~~~~~~~~~~~~~~~~~
-configure:4473: $? = 1
+configure:4527: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -429,34 +430,34 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:4480: result: void
-configure:4488: checking whether lstat correctly handles trailing slash
-configure:4514: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
-configure:4514: $? = 0
-configure:4514: ./conftest
-configure:4514: $? = 0
-configure:4531: result: yes
-configure:4550: checking whether stat accepts an empty string
-configure:4570: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
-configure:4570: $? = 0
-configure:4570: ./conftest
-configure:4570: $? = 0
-configure:4580: result: no
-configure:4598: checking for stdlib.h
-configure:4598: result: yes
-configure:4608: checking for GNU libc compatible malloc
-configure:4632: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
-configure:4632: $? = 0
-configure:4632: ./conftest
-configure:4632: $? = 0
-configure:4642: result: yes
-configure:4666: checking windows.h usability
-configure:4666: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4534: result: void
+configure:4542: checking whether lstat correctly handles trailing slash
+configure:4568: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
+configure:4568: $? = 0
+configure:4568: ./conftest
+configure:4568: $? = 0
+configure:4585: result: yes
+configure:4604: checking whether stat accepts an empty string
+configure:4624: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
+configure:4624: $? = 0
+configure:4624: ./conftest
+configure:4624: $? = 0
+configure:4634: result: no
+configure:4652: checking for stdlib.h
+configure:4652: result: yes
+configure:4662: checking for GNU libc compatible malloc
+configure:4686: /usr/bin/gcc -o conftest -g -O2   conftest.c  >&5
+configure:4686: $? = 0
+configure:4686: ./conftest
+configure:4686: $? = 0
+configure:4696: result: yes
+configure:4720: checking windows.h usability
+configure:4720: /usr/bin/gcc -c -g -O2  conftest.c >&5
 conftest.c:67:10: fatal error: windows.h: No such file or directory
    67 | #include <windows.h>
       |          ^~~~~~~~~~~
 compilation terminated.
-configure:4666: $? = 1
+configure:4720: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -525,14 +526,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <windows.h>
-configure:4666: result: no
-configure:4666: checking windows.h presence
-configure:4666: /usr/bin/gcc -E  conftest.c
+configure:4720: result: no
+configure:4720: checking windows.h presence
+configure:4720: /usr/bin/gcc -E  conftest.c
 conftest.c:34:10: fatal error: windows.h: No such file or directory
    34 | #include <windows.h>
       |          ^~~~~~~~~~~
 compilation terminated.
-configure:4666: $? = 1
+configure:4720: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -568,28 +569,28 @@ configure: failed program was:
 | #define HAVE_MALLOC 1
 | /* end confdefs.h.  */
 | #include <windows.h>
-configure:4666: result: no
-configure:4666: checking for windows.h
-configure:4666: result: no
-configure:4666: checking locale.h usability
-configure:4666: /usr/bin/gcc -c -g -O2  conftest.c >&5
-configure:4666: $? = 0
-configure:4666: result: yes
-configure:4666: checking locale.h presence
-configure:4666: /usr/bin/gcc -E  conftest.c
-configure:4666: $? = 0
-configure:4666: result: yes
-configure:4666: checking for locale.h
-configure:4666: result: yes
-configure:4676: checking for initscr in -lncursesw
-configure:4701: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw   >&5
-configure:4701: $? = 0
-configure:4710: result: yes
-configure:4721: checking for _sleep in -lkernel32
-configure:4746: /usr/bin/gcc -o conftest -g -O2   conftest.c -lkernel32  -lncursesw  >&5
+configure:4720: result: no
+configure:4720: checking for windows.h
+configure:4720: result: no
+configure:4720: checking locale.h usability
+configure:4720: /usr/bin/gcc -c -g -O2  conftest.c >&5
+configure:4720: $? = 0
+configure:4720: result: yes
+configure:4720: checking locale.h presence
+configure:4720: /usr/bin/gcc -E  conftest.c
+configure:4720: $? = 0
+configure:4720: result: yes
+configure:4720: checking for locale.h
+configure:4720: result: yes
+configure:4730: checking for initscr in -lncursesw
+configure:4755: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw   >&5
+configure:4755: $? = 0
+configure:4764: result: yes
+configure:4775: checking for _sleep in -lkernel32
+configure:4800: /usr/bin/gcc -o conftest -g -O2   conftest.c -lkernel32  -lncursesw  >&5
 /usr/bin/ld: cannot find -lkernel32
 collect2: error: ld returned 1 exit status
-configure:4746: $? = 1
+configure:4800: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "rogueclone2s"
@@ -641,68 +642,70 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:4755: result: no
-configure:4769: checking for chdir
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for getcwd
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for getenv
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for getlogin
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for memset
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4809: result: no
+configure:4823: checking for chdir
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for getcwd
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for getenv
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for getlogin
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for memset
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
 conftest.c:63:6: warning: conflicting types for built-in function 'memset'; expected 'void *(void *, int,  long unsigned int)' [-Wbuiltin-declaration-mismatch]
    63 | char memset ();
       |      ^~~~~~
 conftest.c:51:1: note: 'memset' is declared in header '<string.h>'
    50 | # include <limits.h>
    51 | #else
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for putenv
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for setenv
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for setlocale
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for strchr
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for putenv
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for setenv
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for setlocale
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for strchr
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
 conftest.c:67:6: warning: conflicting types for built-in function 'strchr'; expected 'char *(const char *, int)' [-Wbuiltin-declaration-mismatch]
    67 | char strchr ();
       |      ^~~~~~
 conftest.c:55:1: note: 'strchr' is declared in header '<string.h>'
    54 | # include <limits.h>
    55 | #else
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4769: checking for sleep
-configure:4769: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4769: $? = 0
-configure:4769: result: yes
-configure:4781: checking for assume_default_colors
-configure:4781: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4781: $? = 0
-configure:4781: result: yes
-configure:4781: checking for attr_get
-configure:4781: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
-configure:4781: $? = 0
-configure:4781: result: yes
-configure:4931: creating ./config.status
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4823: checking for sleep
+configure:4823: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4823: $? = 0
+configure:4823: result: yes
+configure:4835: checking for assume_default_colors
+configure:4835: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4835: $? = 0
+configure:4835: result: yes
+configure:4835: checking for attr_get
+configure:4835: /usr/bin/gcc -o conftest -g -O2   conftest.c -lncursesw  >&5
+configure:4835: $? = 0
+configure:4835: result: yes
+configure:4967: checking that generated files are newer than configure
+configure:4973: result: done
+configure:4996: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -719,12 +722,15 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on raspberrypi
 
-config.status:878: creating Makefile
-config.status:878: creating doc/Makefile
-config.status:878: creating man/Makefile
-config.status:878: creating src/Makefile
-config.status:878: creating config.h
-config.status:1107: executing depfiles commands
+config.status:884: creating Makefile
+config.status:884: creating doc/Makefile
+config.status:884: creating man/Makefile
+config.status:884: creating src/Makefile
+config.status:884: creating config.h
+config.status:1113: executing depfiles commands
+config.status:1190: cd src       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
+config.status:1195: $? = 0
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -793,7 +799,6 @@ ac_cv_path_mkdir=/usr/bin/mkdir
 ac_cv_prog_AWK=mawk
 ac_cv_prog_CPP='/usr/bin/gcc -E'
 ac_cv_prog_ac_ct_CC=/usr/bin/gcc
-ac_cv_prog_cc__usr_bin_gcc_c_o=yes
 ac_cv_prog_cc_c89=
 ac_cv_prog_cc_g=yes
 ac_cv_prog_gcc_traditional=no
@@ -802,25 +807,31 @@ ac_cv_struct_tm=time.h
 ac_cv_type_signal=void
 ac_cv_type_size_t=yes
 am_cv_CC_dependencies_compiler_type=gcc3
+am_cv_make_support_nested_variables=yes
+am_cv_prog_cc_c_o=yes
 
 ## ----------------- ##
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/pi/Rogue2.Official/missing --run aclocal-1.11'
+ACLOCAL='aclocal-1.16'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
-AMTAR='${SHELL} /home/pi/Rogue2.Official/missing --run tar'
-AUTOCONF='${SHELL} /home/pi/Rogue2.Official/missing --run autoconf'
-AUTOHEADER='${SHELL} /home/pi/Rogue2.Official/missing --run autoheader'
-AUTOMAKE='${SHELL} /home/pi/Rogue2.Official/missing --run automake-1.11'
+AMTAR='$${TAR-tar}'
+AM_BACKSLASH='\'
+AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
+AM_DEFAULT_VERBOSITY='1'
+AM_V='$(V)'
+AUTOCONF='autoconf'
+AUTOHEADER='autoheader'
+AUTOMAKE='automake-1.16'
 AWK='mawk'
 CC='/usr/bin/gcc'
 CCDEPMODE='depmode=gcc3'
 CFLAGS='-g -O2'
 CPP='/usr/bin/gcc -E'
-CPPFLAGS=''
+CPPFLAGS=' -D_XOPEN_SOURCE=500'
 CYGPATH_W='echo'
 DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
@@ -838,7 +849,7 @@ LDFLAGS=''
 LIBOBJS=''
 LIBS='-lncursesw '
 LTLIBOBJS=''
-MAKEINFO='${SHELL} /home/pi/Rogue2.Official/missing --run makeinfo'
+MAKEINFO='makeinfo'
 MKDIR_P='/usr/bin/mkdir -p'
 OBJEXT='o'
 PACKAGE='rogueclone2s'
@@ -861,9 +872,10 @@ am__fastdepCC_TRUE=''
 am__include='include'
 am__isrc=''
 am__leading_dot='.'
+am__nodep='_no'
 am__quote=''
-am__tar='${AMTAR} chof - "$$tardir"'
-am__untar='${AMTAR} xf -'
+am__tar='$${TAR-tar} chof - "$$tardir"'
+am__untar='$${TAR-tar} xf -'
 bindir='${exec_prefix}/bin'
 build_alias=''
 datadir='${datarootdir}'
@@ -881,12 +893,13 @@ libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
 localstatedir='${prefix}/var'
 mandir='${datarootdir}/man'
-mkdir_p='/usr/bin/mkdir -p'
+mkdir_p='$(MKDIR_P)'
 oldincludedir='/usr/include'
 pdfdir='${docdir}'
 prefix='/usr/local'
 program_transform_name='s,x,x,'
 psdir='${docdir}'
+runstatedir='${localstatedir}/run'
 sbindir='${exec_prefix}/sbin'
 sharedstatedir='${prefix}/com'
 sysconfdir='${prefix}/etc'
@@ -945,21 +958,3 @@ target_alias=''
 #define COLOR /**/
 
 configure: exit 0
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by rogueclone2s config.status 6.0, which was
-generated by GNU Autoconf 2.69.  Invocation command line was
-
-  CONFIG_FILES    = 
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status config.h
-
-on raspberrypi
-
-config.status:878: creating config.h
-config.status:1059: config.h is unchanged

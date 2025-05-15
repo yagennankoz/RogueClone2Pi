@@ -5,11 +5,8 @@ rogue-ring.o: ring.c /usr/include/stdc-predef.h /usr/include/string.h \
  /usr/include/aarch64-linux-gnu/bits/long-double.h \
  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
- /usr/lib/gcc/aarch64-linux-gnu/10/include/stddef.h \
- /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h rogue.h ../config.h ring.h invent.h message.h \
- move.h object.h pack.h random.h use.h
+ /usr/lib/gcc/aarch64-linux-gnu/10/include/stddef.h rogue.h ../config.h \
+ ring.h invent.h message.h move.h object.h pack.h random.h use.h
 /usr/include/stdc-predef.h:
 /usr/include/string.h:
 /usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
@@ -20,9 +17,6 @@ rogue-ring.o: ring.c /usr/include/stdc-predef.h /usr/include/string.h \
 /usr/include/aarch64-linux-gnu/gnu/stubs.h:
 /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
 /usr/lib/gcc/aarch64-linux-gnu/10/include/stddef.h:
-/usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
-/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
-/usr/include/strings.h:
 rogue.h:
 ../config.h:
 ring.h:
