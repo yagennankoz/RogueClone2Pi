@@ -25,7 +25,7 @@
 
 #define	CTRL(c)	((c) & 037)
 
-char msg_line[ROGUE_COLUMNS] = "";
+char msg_line[ROGUE_COLUMNS*4] = "";
 short msg_col = 0;
 boolean msg_cleared = 1;
 char hunger_str[17] = "";
@@ -446,7 +446,7 @@ save_screen(void)
 	for (i = 0; i < ROGUE_LINES; i++) {
 	    found_non_blank = 0;
 	    for (j = (ROGUE_COLUMNS - 1); j >= 0; j--) {
-		buf[j] = mvinch_rogue(i, j);
+		buf[j] = mvinch_rogue(i, j);  // UTF-8が正しく取得できないため文字化けする
 		if (!found_non_blank) {
 		    if ((buf[j] != ' ') || (j == 0)) {
 			buf[j + ((j == 0) ? 0 : 1)] = 0;
