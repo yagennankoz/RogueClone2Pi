@@ -1,0 +1,12 @@
+config.h.in~
+configure.lineno
+rogue.esave
+rogue.screen
+.vscode/c_cpp_properties.json
+.vscode/settings.json
+autom4te.cache/*
+src/*.o
+src/.deps/*
+autom4te.cache/output.0
+autom4te.cache/requests
+autom4te.cache/traces.0
