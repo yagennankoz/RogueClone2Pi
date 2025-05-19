@@ -14,6 +14,7 @@ extern void do_opts(void);
 extern void set_opts(char *env);
 extern void env_get_value(char **s, char *e, boolean add_blank,
 			  boolean no_colon);
+extern int u8mb(char chr);
 
 #endif /* not __INIT_H__ */
 //あ

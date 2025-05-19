@@ -439,8 +439,8 @@ put_scores(object *monster, short other)
 #if !defined( TOPSCO )
     short found_pos;
 #endif /* not TOPSCO */
-    char scores[10][82], n_names[10][30];
-    char *p, buf[100], file[100];
+    char scores[10][80 * 4 + 2], n_names[10][30 * 4];
+    char *p, buf[100 * 4], file[100];
     FILE *fp;
 
     fp = NULL;
@@ -469,17 +469,17 @@ put_scores(object *monster, short other)
     }
     (void) xxx(1);
     for (i = 0; i < 10; i++) {
-	if ((n = fread(scores[i], sizeof(char), 80, fp)) == 0) {
+	if ((n = fread(scores[i], sizeof(char), 80 * 4, fp)) == 0) {
 	    break;
 	}
-	if (n < 80) {
+	if (n < 80 * 4) {
 	    sf_error();
 	}
-	xxxx(scores[i], 80);
-	if ((n = fread(n_names[i], sizeof(char), 30, fp)) < 30) {
+	xxxx(scores[i], 80 * 4);
+	if ((n = fread(n_names[i], sizeof(char), 30 * 4, fp)) < 30 * 4) {
 	    sf_error();
 	}
-	xxxx(n_names[i], 30);
+	xxxx(n_names[i], 30 * 4);
     }
     fclose(fp);
     ne = i;
@@ -561,10 +561,10 @@ put_scores(object *monster, short other)
 	}
 	(void) xxx(1);
 	for (i = 0; i < ne; i++) {
-	    xxxx(scores[i], 80);
-	    fwrite(scores[i], sizeof(char), 80, fp);
-	    xxxx(n_names[i], 30);
-	    fwrite(n_names[i], sizeof(char), 30, fp);
+	    xxxx(scores[i], 80 * 4);
+	    fwrite(scores[i], sizeof(char), 80 * 4, fp);
+	    xxxx(n_names[i], 30 * 4);
+	    fwrite(n_names[i], sizeof(char), 30 * 4, fp);
 	}
 	fclose(fp);
     }
@@ -577,8 +577,8 @@ object *monster;
 short other;
 {
     short i, n, rank = 10, x, ne = 0, found_player = -1;
-    char scores[10][82];
-    char n_names[10][30];
+    char scores[10][80 * 4 + 2];
+    char n_names[10][30 * 4];
     char buf[100];
     FILE *fp;
     long s;
@@ -597,14 +597,14 @@ short other;
     (void) xxx(1);
 
     for (i = 0; i < 10; i++) {
-	if (((n = fread(scores[i], sizeof(char), 80, fp)) < 80) && (n != 0)) {
+	if (((n = fread(scores[i], sizeof(char), 80 * 4, fp)) < 80 * 4) && (n != 0)) {
 	    sf_error();
 	} else if (n != 0) {
-	    xxxx(scores[i], 80);
-	    if ((n = fread(n_names[i], sizeof(char), 30, fp)) < 30) {
+	    xxxx(scores[i], 80 * 4);
+	    if ((n = fread(n_names[i], sizeof(char), 30 * 4, fp)) < 30 * 4) {
 		sf_error();
 	    }
-	    xxxx(n_names[i], 30);
+	    xxxx(n_names[i], 30 * 4);
 	} else {
 	    break;
 	}
@@ -698,12 +698,12 @@ short other;
 
 #if defined( JAPAN )
 void
-insert_score(char scores[][82], char n_names[][30], char *n_name, short rank,
+insert_score(char scores[][80 * 4 + 2], char n_names[][30 * 4], char *n_name, short rank,
 	     short n, object *monster, int other)
 {
     short i;
     char *p = NULL;		/* 初期化されず使用される自動変数を初期化します。 */
-    char buf[82];
+    char buf[80 * 4 + 2];
 
     if (n > 0) {
 	for (i = n; i > rank; i--) {
@@ -751,26 +751,26 @@ insert_score(char scores[][82], char n_names[][30], char *n_name, short rank,
 	(void) strcat(buf, mesg[197]);
     }
     strcat(buf, "。");
-    for (i = strlen(buf); i < 79; i++) {
+    for (i = strlen(buf); i < 80 * 4 - 1; i++) {
     //for (i = utf8strlen(buf); i < 79; i++) {
 	buf[i] = ' ';
     }
-    buf[79] = 0;
+    buf[80 * 4 - 1] = 0;
     (void) strcpy(scores[rank], buf);
     (void) strcpy(n_names[rank], n_name);
 }
 
 #else /* not JAPAN */
 insert_score(scores, n_names, n_name, rank, n, monster, other)
-char scores[][82];
-char n_names[][30];
+char scores[][80 * 4 + 2];
+char n_names[][30 * 4];
 char *n_name;
 short rank, n;
 object *monster;
 {
     short i;
     char *p;
-    char buf[82];
+    char buf[80 * 4 + 2];
 
     if (n > 0) {
 	for (i = n; i > rank; i--) {
@@ -812,11 +812,11 @@ object *monster;
 	(void) strcat(buf, m_names[monster->m_char - 'A']);
     }
 #if !defined( ORIGINAL )
-    //sprintf(buf + strlen(buf), " on level %d ", cur_level);
-    sprintf(buf + utf8strlen(buf), " on level %d ", cur_level);
+    sprintf(buf + strlen(buf), " on level %d ", cur_level);
+    //sprintf(buf + utf8strlen(buf), " on level %d ", cur_level);
 #else /* ORIGINAL */
-    //sprintf(buf + strlen(buf), " on level %d ", max_level);
-    sprintf(buf + utf8strlen(buf), " on level %d ", max_level);
+    sprintf(buf + strlen(buf), " on level %d ", max_level);
+    //sprintf(buf + utf8strlen(buf), " on level %d ", max_level);
 #endif /* ORIGINAL */
     if ((other != WIN) && has_amulet()) {
 	(void) strcat(buf, mesg[189]);
@@ -825,7 +825,7 @@ object *monster;
     for (i = utf8strlen(buf); i < 79; i++) {
 	buf[i] = ' ';
     }
-    buf[79] = 0;
+    buf[80 * 4 - 1] = 0;
     (void) strcpy(scores[rank], buf);
     (void) strcpy(n_names[rank], n_name);
 }
@@ -953,10 +953,8 @@ char *s1, *s2;
 	if (r & 0x80) {
 	    i++;
 	}
-#else /* Shift JIS */
-	if (r > 0x80 && r < 0xa0 || r >= 0xe0 && r < 0xf0) {
-	    i++;
-	}
+#else /* UTF-8 */
+	i += u8mb(r) - 1;
 #endif /* not EUC */
 #endif /* not ORIGINAL */
 	i++;
@@ -1040,14 +1038,14 @@ nickize(char *buf, char *score, char *n_name)
     }
 
     (void) strcpy(buf + 15, n_name);
-    //j = strlen(buf);
-    j = utf8strlen(buf);
+    j = strlen(buf);
+    //j = utf8strlen(buf);
 
     while (score[i]) {
 	buf[j++] = score[i++];
     }
     buf[j] = 0;
-    buf[79] = 0;
+    buf[80 * 4 - 1] = 0;
 }
 
 void
