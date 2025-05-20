@@ -701,7 +701,7 @@ void
 insert_score(char scores[][80 * 4 + 2], char n_names[][30 * 4], char *n_name, short rank,
 	     short n, object *monster, int other)
 {
-    short i;
+    short i, j;
     char *p = NULL;		/* 初期化されず使用される自動変数を初期化します。 */
     char buf[80 * 4 + 2];
 
@@ -751,11 +751,12 @@ insert_score(char scores[][80 * 4 + 2], char n_names[][30 * 4], char *n_name, sh
 	(void) strcat(buf, mesg[197]);
     }
     strcat(buf, "。");
-    for (i = strlen(buf); i < 80 * 4 - 1; i++) {
+	j = strlen(buf)+ 76 - utf8strlen(buf);
+    for (i = strlen(buf); i < j; i++) {
     //for (i = utf8strlen(buf); i < 79; i++) {
 	buf[i] = ' ';
+	buf[i + 1] = 0;
     }
-    buf[80 * 4 - 1] = 0;
     (void) strcpy(scores[rank], buf);
     (void) strcpy(n_names[rank], n_name);
 }
@@ -770,7 +771,7 @@ object *monster;
 {
     short i;
     char *p;
-    char buf[80 * 4 + 2];
+    char buf[82];
 
     if (n > 0) {
 	for (i = n; i > rank; i--) {
@@ -825,7 +826,7 @@ object *monster;
     for (i = utf8strlen(buf); i < 79; i++) {
 	buf[i] = ' ';
     }
-    buf[80 * 4 - 1] = 0;
+    buf[79] = 0;
     (void) strcpy(scores[rank], buf);
     (void) strcpy(n_names[rank], n_name);
 }
