@@ -138,11 +138,13 @@ utf8strlen(const char *str)
   //return strlen(p);
 
   // 1 
-  int len;
-  for (len=0;*str*3;++len) {
-    str+=utf8len(str);
+  int cnt = 0;
+  while (*str != '\0') {
+    int bytes = u8mb(*str);
+    cnt += (bytes == 1) ? 1 : 2;
+    str += bytes;
   }
-  return len;
+  return cnt;
 }
 
 int
