@@ -751,7 +751,7 @@ insert_score(char scores[][80 * 4 + 2], char n_names[][30 * 4], char *n_name, sh
 	(void) strcat(buf, mesg[197]);
     }
     strcat(buf, "。");
-    for (i = strlen(buf); utf8strlen(buf) < 76; i++) {
+    for (i = strlen(buf); utf8strlen(buf) < 79; i++) {
     //for (i = utf8strlen(buf); i < 79; i++) {
 	buf[i] = ' ';
 	buf[i + 1] = 0;
@@ -1041,10 +1041,10 @@ nickize(char *buf, char *score, char *n_name)
     j = strlen(buf);
     //j = utf8strlen(buf);
 
-    while (score[i]) {
+    while (score[i] && utf8strlen(buf) < 80) {
 	buf[j++] = score[i++];
+	buf[j] = 0;
     }
-    buf[j] = 0;
     buf[80 * 4 - 1] = 0;
 }
 
