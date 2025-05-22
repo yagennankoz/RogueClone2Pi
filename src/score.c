@@ -1025,7 +1025,7 @@ xxx(boolean st)
 void
 nickize(char *buf, char *score, char *n_name)
 {
-    short i = 15, j;
+    short i = 15, j, k;
 
     if (!n_name[0]) {
 	(void) strcpy(buf, score);
@@ -1038,10 +1038,10 @@ nickize(char *buf, char *score, char *n_name)
     }
 
     (void) strcpy(buf + 15, n_name);
-    j = strlen(buf);
+    j = k = strlen(buf);
     //j = utf8strlen(buf);
 
-    while (score[i] && utf8strlen(buf) < 80) {
+    while (score[i] && utf8strlen(buf + k) < 80) {
 	buf[j++] = score[i++];
 	buf[j] = 0;
     }
