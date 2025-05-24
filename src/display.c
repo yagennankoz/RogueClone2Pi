@@ -30,7 +30,8 @@ enum rogue_colors{
   YELLOW_REVERSE = 11,
   BLUE_REVERSE = 12,
   MAGENTA_REVERSE = 13,
-  CYAN_REVERSE = 14
+  CYAN_REVERSE = 14,
+  TRANSPARENT = -1,
 };
 //
 #define RWHITE	 8
@@ -60,22 +61,22 @@ void init_color_attr(void){
   if(first_init){
 	  start_color();
     /* 背景色の定義 */
-    assume_default_colors(COLOR_WHITE, COLOR_BLACK);
+    assume_default_colors(COLOR_WHITE, TRANSPARENT);
     /* 表示色の定義 */
-    init_pair(WHITE, COLOR_WHITE, COLOR_BLACK);
-    init_pair(RED, COLOR_RED, COLOR_BLACK);
-    init_pair(GREEN, COLOR_GREEN, COLOR_BLACK);
-    init_pair(YELLOW, COLOR_YELLOW, COLOR_BLACK);
-    init_pair(BLUE, COLOR_BLUE, COLOR_BLACK);
-    init_pair(MAGENTA, COLOR_MAGENTA, COLOR_BLACK);
-    init_pair(CYAN, COLOR_CYAN, COLOR_BLACK);
-    init_pair(WHITE_REVERSE, COLOR_BLACK, COLOR_WHITE);
-    init_pair(RED_REVERSE, COLOR_BLACK, COLOR_RED);
-    init_pair(GREEN_REVERSE, COLOR_BLACK, COLOR_GREEN);
-    init_pair(YELLOW_REVERSE, COLOR_BLACK, COLOR_YELLOW);
-    init_pair(BLUE_REVERSE, COLOR_BLACK, COLOR_BLUE);
-    init_pair(MAGENTA_REVERSE, COLOR_BLACK, COLOR_MAGENTA);
-    init_pair(CYAN_REVERSE, COLOR_BLACK, COLOR_CYAN);
+    init_pair(WHITE, COLOR_WHITE, TRANSPARENT);
+    init_pair(RED, COLOR_RED, TRANSPARENT);
+    init_pair(GREEN, COLOR_GREEN, -TRANSPARENT);
+    init_pair(YELLOW, COLOR_YELLOW, TRANSPARENT);
+    init_pair(BLUE, COLOR_BLUE, TRANSPARENT);
+    init_pair(MAGENTA, COLOR_MAGENTA, TRANSPARENT);
+    init_pair(CYAN, COLOR_CYAN, TRANSPARENT);
+    init_pair(WHITE_REVERSE, TRANSPARENT, COLOR_WHITE);
+    init_pair(RED_REVERSE, TRANSPARENT, COLOR_RED);
+    init_pair(GREEN_REVERSE, TRANSPARENT, COLOR_GREEN);
+    init_pair(YELLOW_REVERSE, TRANSPARENT, COLOR_YELLOW);
+    init_pair(BLUE_REVERSE, TRANSPARENT, COLOR_BLUE);
+    init_pair(MAGENTA_REVERSE, TRANSPARENT, COLOR_MAGENTA);
+    init_pair(CYAN_REVERSE, TRANSPARENT, COLOR_CYAN);
   }
 #endif /* COLOR */
   /* 表示設定解析 */
