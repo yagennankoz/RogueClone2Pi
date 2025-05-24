@@ -1,0 +1,7 @@
+# ビルド手順です
+sudo apt install -y automake libncurses5-dev libncursesw5-dev
+autoreconf -i
+./configure
+make clean
+make
+cp src/rogue .
